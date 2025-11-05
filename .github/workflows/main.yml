@@ -47,6 +47,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SERVER_KEY }}
 
+      - name: Check zip file before sending
+        run: ls -lh deploy.zip
+
       # 8️⃣ Upload and deploy to Hestia
       - name: Upload and extract on server
         run: |
